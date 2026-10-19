@@ -276,6 +276,12 @@ class QuizApp {
     if (this.activeQuestions.length === 0) {
       this.activeQuestions = [...this.allQuestions];
     }
+
+    // Shuffle (Fisher-Yates) so every attempt has a different order
+    for (let i = this.activeQuestions.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [this.activeQuestions[i], this.activeQuestions[j]] = [this.activeQuestions[j], this.activeQuestions[i]];
+    }
   }
 
   restartQuiz(resetFilters = true) {
