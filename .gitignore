@@ -1,0 +1,14 @@
+# Java
+*.class
+
+# Python
+__pycache__/
+*.pyc
+
+# Large raw presentation assets
+*.pptx
+*.pdf
+
+# Temporary extraction files
+lesson_*_clean.txt
+extracted_*.txt

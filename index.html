@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Art Appreciation — 100-Question Quiz & Validation System</title>
+  <meta name="description" content="A rigorous 100-question quiz engine for Art Appreciation covering Lessons 1 to 4 with an advanced answer validation system.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body class="theme-dark">
+  <div class="app-container">
+    <!-- Top Bar Navigation -->
+    <header class="quiz-header">
+      <div class="header-brand">
+        <div class="brand-icon">🎨</div>
+        <div class="brand-info">
+          <h1>Art Appreciation</h1>
+          <span class="subtitle">Examiner & Answer Validation System</span>
+        </div>
+      </div>
+      <div class="header-actions">
+        <button id="btn-sound" class="btn-icon" title="Toggle Sound (Mute/Unmute)" aria-label="Toggle Sound">
+          <span id="sound-icon">🔊</span>
+        </button>
+        <button id="btn-theme" class="btn-icon" title="Toggle Dark/Light Mode" aria-label="Toggle Theme">
+          <span id="theme-icon">🌙</span>
+        </button>
+        <button id="btn-restart" class="btn-secondary" title="Restart Quiz">Restart</button>
+      </div>
+    </header>
+
+    <!-- Quiz Settings & Filter Bar -->
+    <nav class="filter-bar">
+      <div class="filter-group">
+        <label for="filter-lesson">Filter by Lesson:</label>
+        <select id="filter-lesson" class="select-input">
+          <option value="all">All Lessons (100 Questions)</option>
+          <option value="1">Lesson 1: Intro to Art Appreciation</option>
+          <option value="2">Lesson 2: Elements of Art</option>
+          <option value="3">Lesson 3: Principles & Psychology</option>
+          <option value="4">Lesson 4: Materials & Technique</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <label for="filter-type">Question Type:</label>
+        <select id="filter-type" class="select-input">
+          <option value="all">All Types (Balanced)</option>
+          <option value="multiple_choice">Multiple Choice</option>
+          <option value="identification">Identification</option>
+          <option value="true_false">True or False</option>
+        </select>
+      </div>
+
+      <div class="filter-group toggle-group">
+        <label class="switch-label" for="toggle-retry">
+          <input type="checkbox" id="toggle-retry">
+          <span class="switch-slider"></span>
+          <span class="switch-text">Retry Mode</span>
+        </label>
+      </div>
+    </nav>
+
+    <!-- Progress Indicator -->
+    <div class="progress-section">
+      <div class="progress-meta">
+        <div class="question-tracker">
+          Question <span id="current-q-num">1</span> of <span id="total-q-num">100</span>
+        </div>
+        <div class="score-pills">
+          <span class="pill pill-score">Score: <strong id="score-percentage">0%</strong></span>
+          <span class="pill pill-streak">🔥 Streak: <strong id="streak-count">0</strong></span>
+        </div>
+      </div>
+      <div class="progress-bar-container">
+        <div id="progress-bar-fill" class="progress-bar-fill" style="width: 1%;"></div>
+      </div>
+    </div>
+
+    <!-- Main Quiz View -->
+    <main class="quiz-main">
+      <div id="quiz-card" class="card question-card">
+        <!-- Question Header Badges -->
+        <div class="card-meta">
+          <span id="badge-lesson" class="badge badge-lesson">Lesson 1</span>
+          <span id="badge-type" class="badge badge-type">Multiple Choice</span>
+          <span id="badge-attempt" class="badge badge-attempt" style="display: none;">Attempt #2</span>
+        </div>
+
+        <!-- Question Prompt -->
+        <h2 id="question-text" class="question-text">Loading question...</h2>
+
+        <!-- Interactive Question Input Containers -->
+        <!-- 1. Multiple Choice Options -->
+        <div id="mc-container" class="options-grid"></div>
+
+        <!-- 2. True or False Buttons -->
+        <div id="tf-container" class="tf-grid" style="display: none;">
+          <button class="btn-tf btn-tf-true" data-value="true">
+            <span class="tf-icon">✓</span>
+            <span class="tf-label">TRUE</span>
+          </button>
+          <button class="btn-tf btn-tf-false" data-value="false">
+            <span class="tf-icon">✗</span>
+            <span class="tf-label">FALSE</span>
+          </button>
+        </div>
+
+        <!-- 3. Identification Input Field -->
+        <form id="id-form" class="id-container" style="display: none;" onsubmit="return false;">
+          <div class="id-input-wrapper">
+            <input type="text" id="id-input" class="text-input" placeholder="Type your answer here..." autocomplete="off" autocorrect="off" autocapitalize="none" spellcheck="false">
+            <button type="submit" id="btn-submit-id" class="btn-primary">Submit Answer</button>
+          </div>
+          <div class="id-hint">
+            💡 <em>Answer validation pipeline active: normalizes spelling, punctuation, capitalization, and accepted equivalents.</em>
+          </div>
+        </form>
+
+        <!-- Dynamic Feedback Container -->
+        <div id="feedback-card" class="feedback-card" style="display: none;">
+          <div class="feedback-header">
+            <div id="feedback-badge" class="feedback-badge badge-correct">CORRECT</div>
+            <div id="feedback-summary-title" class="feedback-summary">Well done!</div>
+          </div>
+
+          <div class="feedback-content">
+            <div id="feedback-canonical-wrap" class="canonical-box">
+              <span class="box-label">Canonical Answer:</span>
+              <strong id="feedback-canonical-text"></strong>
+            </div>
+
+            <div id="feedback-distinction-wrap" class="distinction-box" style="display: none;">
+              <span class="box-label">⚠️ Key Distinction / Concept Analysis:</span>
+              <p id="feedback-distinction-text"></p>
+            </div>
+
+            <div id="feedback-alternatives-wrap" class="alternatives-box" style="display: none;">
+              <span class="box-label">Accepted Equivalents & Synonyms:</span>
+              <p id="feedback-alternatives-text"></p>
+            </div>
+
+            <div class="explanation-box">
+              <span class="box-label">Source Explanation:</span>
+              <p id="feedback-explanation-text"></p>
+            </div>
+          </div>
+
+          <!-- Action Buttons in Feedback -->
+          <div class="feedback-actions">
+            <button id="btn-retry" class="btn-warning" style="display: none;">Try Again</button>
+            <button id="btn-next" class="btn-primary btn-next">
+              Next Question <span class="key-hint">↵ [Enter]</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Results Summary Card (Shown when quiz completes) -->
+      <div id="results-card" class="card results-card" style="display: none;">
+        <div class="results-header">
+          <div class="trophy-icon">🏆</div>
+          <h2>Quiz Completed!</h2>
+          <p class="results-subtitle">Comprehensive Art Appreciation Performance Report</p>
+        </div>
+
+        <div class="score-display">
+          <div class="score-circle">
+            <span id="final-score-percent">100%</span>
+            <span class="score-circle-label">First-Attempt Score</span>
+          </div>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-card">
+            <span class="stat-label">Total Questions</span>
+            <strong id="stat-total" class="stat-val">100</strong>
+          </div>
+          <div class="stat-card">
+            <span class="stat-label">First-Attempt Correct</span>
+            <strong id="stat-first-correct" class="stat-val text-success">0</strong>
+          </div>
+          <div class="stat-card">
+            <span class="stat-label">Accepted Equivalents</span>
+            <strong id="stat-minor-variations" class="stat-val text-info">0</strong>
+          </div>
+          <div class="stat-card">
+            <span class="stat-label">Incorrect / Missed</span>
+            <strong id="stat-incorrect" class="stat-val text-danger">0</strong>
+          </div>
+        </div>
+
+        <div id="missed-review-section" class="missed-review-section" style="display: none;">
+          <h3>Missed Questions Review</h3>
+          <div id="missed-list" class="missed-list"></div>
+        </div>
+
+        <div class="results-actions">
+          <button id="btn-restart-results" class="btn-primary">Take Quiz Again</button>
+          <button id="btn-review-missed" class="btn-secondary" style="display: none;">Review Missed Only</button>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="quiz-footer">
+      <p>Art Appreciation (Lessons 1–4) • Grounded in Course Lecture Slides & Textbooks • GitHub Pages Ready</p>
+    </footer>
+  </div>
+
+  <!-- Scripts -->
+  <script src="questions.js"></script>
+  <script src="validator.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

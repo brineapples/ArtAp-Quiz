@@ -1,0 +1,1827 @@
+// Art Appreciation 100-Question Comprehensive Database
+// Grounded strictly in Lessons 1 to 4 source materials
+const QUIZ_QUESTIONS = [
+  {
+    "id": 1,
+    "lesson": 1,
+    "lessonTitle": "Lesson 1: Introduction to Art Appreciation",
+    "type": "multiple_choice",
+    "question": "According to Lesson 1, how is Art Appreciation fundamentally defined?",
+    "options": [
+      "A. The commercial pricing and market valuation of fine art pieces",
+      "B. The study and understanding of the value, significance, and meaning of art",
+      "C. The academic training required to master painting and sculpting techniques",
+      "D. The preservation and chemical restoration of ancient historical artifacts"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Lesson 1 defines Art Appreciation as 'the study and understanding of the value, significance, and meaning of art,' involving the analysis and interpretation of visual and performing arts."
+  },
+  {
+    "id": 2,
+    "lesson": 1,
+    "lessonTitle": "Lesson 1: Introduction to Art Appreciation",
+    "type": "identification",
+    "question": "Which goal of art appreciation involves learning about the historical, cultural, and social backgrounds in which a work of art was created to gain insight into its meaning and purpose?",
+    "canonicalAnswer": "Understanding Context",
+    "acceptedAlternatives": [
+      "Context",
+      "Understanding Historical Context",
+      "Historical and Cultural Context",
+      "Contextual Understanding"
+    ],
+    "acceptedVariations": [
+      "understanding contexts",
+      "context understanding"
+    ],
+    "requiredKeywords": [
+      "context"
+    ],
+    "nearMisses": [
+      {
+        "term": "Interpreting Meaning",
+        "reason": "Interpreting meaning focuses on symbolism and artist intention, whereas context deals with the historical, cultural, and social background."
+      },
+      {
+        "term": "Evaluating Aesthetics",
+        "reason": "Evaluating aesthetics concerns criteria for assessing beauty and craftsmanship, not historical background."
+      }
+    ],
+    "distinction": "Understanding Context specifically addresses the historical, social, and cultural settings surrounding the artwork's creation.",
+    "explanation": "Goal #1 in Lesson 1 is 'Understanding Context: Learning about the historical, cultural, and social contexts in which a work of art was created, which can provide insight into its meaning and purpose.'"
+  },
+  {
+    "id": 3,
+    "lesson": 1,
+    "lessonTitle": "Lesson 1: Introduction to Art Appreciation",
+    "type": "true_false",
+    "question": "Art appreciation is limited exclusively to visual arts such as paintings and sculptures, excluding performing arts like music, theater, and dance.",
+    "correctAnswer": false,
+    "explanation": "False. Lesson 1 explicitly states that art appreciation involves analyzing and interpreting visual arts (paintings, sculptures, architecture) as well as performing arts (music, theater, and dance)."
+  },
+  {
+    "id": 4,
+    "lesson": 1,
+    "lessonTitle": "Lesson 1: Introduction to Art Appreciation",
+    "type": "multiple_choice",
+    "question": "Which of the following artistic periods and movements are explicitly highlighted under the goal 'Recognizing Styles and Movements' in Lesson 1?",
+    "options": [
+      "A. Renaissance, Baroque, Impressionism, Modernism, and Contemporary art",
+      "B. Gothic, Rococo, Romanticism, Dadaism, and Surrealism",
+      "C. Prehistoric, Byzantine, Cubism, Fauvism, and Pop Art",
+      "D. Classical Greek, Romanesque, Realism, and Post-Modernism"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Lesson 1 Slide 8 explicitly enumerates 'Renaissance, Baroque, Impressionism, Modernism, and Contemporary art' under Recognizing Styles and Movements."
+  },
+  {
+    "id": 5,
+    "lesson": 1,
+    "lessonTitle": "Lesson 1: Introduction to Art Appreciation",
+    "type": "identification",
+    "question": "What goal of art appreciation involves developing criteria for assessing the beauty and effectiveness of an artwork, balancing both subjective and objective factors?",
+    "canonicalAnswer": "Evaluating Aesthetics",
+    "acceptedAlternatives": [
+      "Aesthetics Evaluation",
+      "Evaluating Aesthetic Value",
+      "Aesthetic Evaluation"
+    ],
+    "acceptedVariations": [
+      "evaluating aesthetic",
+      "evaluate aesthetics"
+    ],
+    "requiredKeywords": [
+      "aesthetics"
+    ],
+    "nearMisses": [
+      {
+        "term": "Aesthetic Enjoyment",
+        "reason": "Aesthetic Enjoyment is a key reason/benefit of art appreciation, whereas Evaluating Aesthetics is the specific goal of establishing assessment criteria."
+      },
+      {
+        "term": "Critique",
+        "reason": "Critique is too broad; the specific curriculum term is Evaluating Aesthetics."
+      }
+    ],
+    "distinction": "Evaluating Aesthetics is the explicit 5th goal focused on developing evaluative criteria, whereas Aesthetic Enjoyment is a broader experiential benefit.",
+    "explanation": "Lesson 1 Slide 10 defines Goal #5 as 'Evaluating Aesthetics: Developing criteria for assessing the beauty and effectiveness of an artwork, taking into account both subjective and objective factors.'"
+  },
+  {
+    "id": 6,
+    "lesson": 1,
+    "lessonTitle": "Lesson 1: Introduction to Art Appreciation",
+    "type": "true_false",
+    "question": "Twentieth-century art produced after World War II predominantly celebrated untroubled peace and avoided expressing human suffering or darkness.",
+    "correctAnswer": false,
+    "explanation": "False. Lesson 1 Slide 30 notes that many poignant products of art were made after World War II, and twentieth-century art mostly expressed human suffering and darkness in its themes."
+  },
+  {
+    "id": 7,
+    "lesson": 1,
+    "lessonTitle": "Lesson 1: Introduction to Art Appreciation",
+    "type": "multiple_choice",
+    "question": "Which British artist created the experiential architectural artwork 'Ghost Library' (Holocaust Memorial in Vienna) to hauntingly commemorate Holocaust victims?",
+    "options": [
+      "A. Antony Gormley",
+      "B. Anish Kapoor",
+      "C. Rachel Whiteread",
+      "D. Henry Moore"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Rachel Whiteread created 'Ghost Library' (the Judenplatz Holocaust Memorial in Vienna), using architectural space and memory to process grief and remember Holocaust victims."
+  },
+  {
+    "id": 8,
+    "lesson": 1,
+    "lessonTitle": "Lesson 1: Introduction to Art Appreciation",
+    "type": "identification",
+    "question": "Which prominent monument located in Luneta Park is cited in Lesson 1 as a tangible example of art functioning for remembering and mark-making to sustain nationalistic values?",
+    "canonicalAnswer": "Rizal Monument",
+    "acceptedAlternatives": [
+      "Monument of Rizal",
+      "Jose Rizal Monument",
+      "Dr. Jose Rizal Monument",
+      "Luneta Rizal Monument"
+    ],
+    "acceptedVariations": [
+      "rizal memorial",
+      "monumento ni rizal"
+    ],
+    "requiredKeywords": [
+      "rizal"
+    ],
+    "nearMisses": [
+      {
+        "term": "Bonifacio Monument",
+        "reason": "The Bonifacio Monument is located in Caloocan, whereas the slide specifically references the monument of Rizal in Luneta Park."
+      },
+      {
+        "term": "Spoliarium",
+        "reason": "Spoliarium is a painting by Juan Luna, not a public monument in Luneta Park."
+      }
+    ],
+    "distinction": "The Monument of Rizal in Luneta Park is explicitly cited for the 'Remembering and Mark-Making' function in Philippine national heritage.",
+    "explanation": "Lesson 1 Slide 33: 'The monument of Rizal in Luneta Park is one example of a type of art that help us remember... Without the tangible characteristic of art, we will not be able to sustain our nationalistic values well enough.'"
+  },
+  {
+    "id": 9,
+    "lesson": 1,
+    "lessonTitle": "Lesson 1: Introduction to Art Appreciation",
+    "type": "true_false",
+    "question": "Antony Gormley's colossal sculpture 'Angel of the North' is located in Gateshead, England, and features airplane-like wings.",
+    "correctAnswer": true,
+    "explanation": "True. Lesson 1 Slide 36 states that Gormley's 'Angel of the North' in Gateshead, England, depicts a human figure with airplane-like wings and was commissioned as an identifying regional landmark."
+  },
+  {
+    "id": 10,
+    "lesson": 1,
+    "lessonTitle": "Lesson 1: Introduction to Art Appreciation",
+    "type": "multiple_choice",
+    "question": "What is the famous metallic, bean-shaped public sculpture created by Anish Kapoor located in Chicago that serves as an urban landmark?",
+    "options": [
+      "A. The Gate of Hope",
+      "B. Cloud Gate",
+      "C. Angel of the North",
+      "D. The Sphere of Unity"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Anish Kapoor created 'Cloud Gate' (famously nicknamed 'The Bean') in Millennium Park, Chicago, exemplifying art's function in mark-making and establishing regional identity."
+  },
+  {
+    "id": 11,
+    "lesson": 1,
+    "lessonTitle": "Lesson 1: Introduction to Art Appreciation",
+    "type": "identification",
+    "question": "What category of art uses public visual expressions—such as large paper-mâché effigies burned during protests or satirical political commentaries—to challenge injustice and induce social change?",
+    "canonicalAnswer": "Activist Art",
+    "acceptedAlternatives": [
+      "Protest Art",
+      "Activists Art",
+      "Activism Art"
+    ],
+    "acceptedVariations": [
+      "activist",
+      "protest"
+    ],
+    "requiredKeywords": [
+      "activist"
+    ],
+    "nearMisses": [
+      {
+        "term": "Performance Art",
+        "reason": "Performance art is a general medium, not necessarily focused on political resistance or burned protest effigies."
+      },
+      {
+        "term": "Folk Art",
+        "reason": "Folk art represents traditional cultural crafts, not protest and social awakening movements."
+      }
+    ],
+    "distinction": "Activist Art explicitly refers to politically engaged artworks aimed at raising awareness, exposing systemic abuses, and driving social justice.",
+    "explanation": "Lesson 1 Slide 38: 'Some art can be categorized as activist art (large sculptural effigies made of papermache burned protest art)... Some are subtle paintings which might use satire.'"
+  },
+  {
+    "id": 12,
+    "lesson": 1,
+    "lessonTitle": "Lesson 1: Introduction to Art Appreciation",
+    "type": "true_false",
+    "question": "In Gothic architecture, stained glass windows and illuminated manuscripts served as subtle artistic methods of raising religious and social awareness.",
+    "correctAnswer": true,
+    "explanation": "True. Lesson 1 Slide 40 notes: 'A more subtle way of inducing awareness can be observed in architecture such as the stained glass windows of Gothic churches and even their illuminated manuscripts.'"
+  },
+  {
+    "id": 13,
+    "lesson": 1,
+    "lessonTitle": "Lesson 1: Introduction to Art Appreciation",
+    "type": "multiple_choice",
+    "question": "How did Miss Universe 2019 Catriona Gray's national costume exemplify the function of 'Culture and Togetherness'?",
+    "options": [
+      "A. It was manufactured entirely out of eco-friendly indigenous recycled fibers",
+      "B. It symbolically united the Philippines by integrating motifs from Luzon, Visayas, and Mindanao",
+      "C. It represented international diplomacy between Southeast Asian nations",
+      "D. It commemorated the architectural heritage of pre-colonial Spanish fortifications"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Lesson 1 Slide 43 notes that Catriona Gray wore a national costume inspired by Luzon, Visayas, and Mindanao, symbolically uniting the nation's regional diversity."
+  },
+  {
+    "id": 14,
+    "lesson": 1,
+    "lessonTitle": "Lesson 1: Introduction to Art Appreciation",
+    "type": "identification",
+    "question": "Which function of art is demonstrated when artworks are placed in daunting hospital environments or when relatable typography provides comfort and solace?",
+    "canonicalAnswer": "Happiness and Hope",
+    "acceptedAlternatives": [
+      "Hope and Happiness",
+      "Happiness",
+      "Hope"
+    ],
+    "acceptedVariations": [
+      "happiness & hope"
+    ],
+    "requiredKeywords": [
+      "happiness",
+      "hope"
+    ],
+    "nearMisses": [
+      {
+        "term": "Therapeutic Benefits",
+        "reason": "Therapeutic Benefits is classified as an overarching importance/reason, while 'Happiness and Hope' is the specific numbered Function of Art in Slide 24."
+      },
+      {
+        "term": "Beauty",
+        "reason": "Beauty focuses strictly on aesthetics and prettiness to enliven walls, whereas hope addresses anxiety and uplifting emotional tone."
+      }
+    ],
+    "distinction": "Happiness and Hope is the designated 2nd function of art that counters despair and brings joy in challenging environments.",
+    "explanation": "Lesson 1 Slide 24-26 designates 'Happiness and Hope' as Function #2, highlighting hospital art, happy memories, relatable typography, and homage."
+  },
+  {
+    "id": 15,
+    "lesson": 1,
+    "lessonTitle": "Lesson 1: Introduction to Art Appreciation",
+    "type": "true_false",
+    "question": "Art appreciation provides educational benefits through interdisciplinary learning because it intersects with disciplines like history, literature, and psychology.",
+    "correctAnswer": true,
+    "explanation": "True. Lesson 1 Slide 17 highlights 'Interdisciplinary Learning: Art appreciation intersects with various disciplines such as history, literature, and psychology, providing a well-rounded educational experience.'"
+  },
+  {
+    "id": 16,
+    "lesson": 1,
+    "lessonTitle": "Lesson 1: Introduction to Art Appreciation",
+    "type": "multiple_choice",
+    "question": "Why is the today's generation often described in Lesson 1 as both the 'me generation' and the 'anxious generation' in relation to art?",
+    "options": [
+      "A. They reject all classical forms of art in favor of digital social media apps",
+      "B. They struggle with identity, disconnectedness, and mental health, where art serves as an external tangible means of self-understanding",
+      "C. They produce the highest volume of commercial pop art in human history",
+      "D. They demand that all museum collections be digitized and open-sourced"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Lesson 1 Slide 27-29 highlights identity struggles, gender issues, and social media disconnectedness, explaining how art gives tangible definition to internal emotional confusion."
+  },
+  {
+    "id": 17,
+    "lesson": 1,
+    "lessonTitle": "Lesson 1: Introduction to Art Appreciation",
+    "type": "identification",
+    "question": "What innate function of art brings dull, lifeless walls to life by introducing dynamic visual contrast against ordinary, common surroundings?",
+    "canonicalAnswer": "Beauty",
+    "acceptedAlternatives": [
+      "Aesthetic Value",
+      "Prettiness",
+      "Beauty / Aesthetic Value"
+    ],
+    "acceptedVariations": [
+      "the function of beauty"
+    ],
+    "requiredKeywords": [
+      "beauty"
+    ],
+    "nearMisses": [
+      {
+        "term": "Decoration",
+        "reason": "Decoration is a colloquial term; the curriculum explicitly identifies 'Beauty' as the first function of art."
+      },
+      {
+        "term": "Variety",
+        "reason": "Variety is a Principle of Design (Lesson 3), not a Function of Art (Lesson 1)."
+      }
+    ],
+    "distinction": "Beauty is Function #1 in Lesson 1, addressing aesthetic prettiness and breathing life into lifeless environments.",
+    "explanation": "Lesson 1 Slide 21-22: '1. BEAUTY – One of the innate qualities that “pretty art” can give is that it makes our dull, lifeless walls come to life.'"
+  },
+  {
+    "id": 18,
+    "lesson": 1,
+    "lessonTitle": "Lesson 1: Introduction to Art Appreciation",
+    "type": "true_false",
+    "question": "The historical divide-and-conquer strategy employed by the Spaniards in the Philippines reinforced national regionalism that local art forms can help heal and unify.",
+    "correctAnswer": true,
+    "explanation": "True. Lesson 1 Slide 41-42 emphasizes that art provides regional identity and a sense of redemption for historical division caused by the Spanish divide-and-conquer strategy."
+  },
+  {
+    "id": 19,
+    "lesson": 1,
+    "lessonTitle": "Lesson 1: Introduction to Art Appreciation",
+    "type": "multiple_choice",
+    "question": "In Assessment 1 of Lesson 1, which two masterworks are paired for comparative study to observe portrayals of tragedy, human suffering, and narrative emotion?",
+    "options": [
+      "A. Leonardo da Vinci's 'Mona Lisa' and Johannes Vermeer's 'Girl with a Pearl Earring'",
+      "B. Francisco Goya's 'The Third of May 1808' and Juan Luna's 'Spoliarium'",
+      "C. Michelangelo's 'Creation of Adam' and Albrecht Dürer's 'Melencolia I'",
+      "D. Vincent van Gogh's 'The Starry Night' and Edvard Munch's 'The Scream'"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Lesson 1 Slide 46 explicitly directs students to observe and compare Francisco Goya’s 'The Third of May 1808' with Juan Luna’s 'Spoliarium'."
+  },
+  {
+    "id": 20,
+    "lesson": 1,
+    "lessonTitle": "Lesson 1: Introduction to Art Appreciation",
+    "type": "identification",
+    "question": "What specific key benefit of art appreciation states that art serves as a historical record capturing the values, beliefs, and events of diverse time periods?",
+    "canonicalAnswer": "Preserves History",
+    "acceptedAlternatives": [
+      "Preserving History",
+      "Cultural Awareness and Understanding",
+      "Preservation of History"
+    ],
+    "acceptedVariations": [
+      "history preservation"
+    ],
+    "requiredKeywords": [
+      "history"
+    ],
+    "nearMisses": [
+      {
+        "term": "Bridges Cultures",
+        "reason": "Bridges Cultures fosters empathy between living groups, while Preserves History captures historical records and past events."
+      },
+      {
+        "term": "Remembering and Mark-Making",
+        "reason": "Remembering is a broad function of public monuments, while 'Preserves History' is the exact sub-point under Cultural Awareness in Slide 13."
+      }
+    ],
+    "distinction": "Preserves History specifically defines art's role as a primary document and enduring record of historical eras.",
+    "explanation": "Lesson 1 Slide 13: 'Preserves History: Art serves as a historical record, capturing the values, beliefs, and events of various time periods.'"
+  },
+  {
+    "id": 21,
+    "lesson": 1,
+    "lessonTitle": "Lesson 1: Introduction to Art Appreciation",
+    "type": "true_false",
+    "question": "Art appreciation has therapeutic value because engaging with art stimulates mindfulness and presence, helping individuals focus on the moment.",
+    "correctAnswer": true,
+    "explanation": "True. Lesson 1 Slide 19 notes under Therapeutic Benefits: 'Encourages Mindfulness: Engaging with art encourages mindfulness and presence, helping individuals to focus on the moment.'"
+  },
+  {
+    "id": 22,
+    "lesson": 1,
+    "lessonTitle": "Lesson 1: Introduction to Art Appreciation",
+    "type": "multiple_choice",
+    "question": "Which of the following describes the therapeutic function of art when coping with catastrophic loss and war?",
+    "options": [
+      "A. It erases historical memories so societies can move forward unconditionally",
+      "B. It provides an experiential medium to express pain, process trauma, and make grieving dignified",
+      "C. It replaces professional medical care and psychological therapy entirely",
+      "D. It generates commercial revenue for state war memorials"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Lesson 1 Slide 32 states: 'Through out the years, artists have interpreted these shared human experiences in different ways, which also help us process our grief... making grieving somehow dignified.'"
+  },
+  {
+    "id": 23,
+    "lesson": 1,
+    "lessonTitle": "Lesson 1: Introduction to Art Appreciation",
+    "type": "identification",
+    "question": "What is the term for the function of art that allows people to honor their heritage and identify landmark spaces using public monuments and sculptures?",
+    "canonicalAnswer": "Remembering and Mark-Making",
+    "acceptedAlternatives": [
+      "Mark-Making and Remembering",
+      "Remembering",
+      "Mark-Making"
+    ],
+    "acceptedVariations": [
+      "remembering and mark making"
+    ],
+    "requiredKeywords": [
+      "remembering"
+    ],
+    "nearMisses": [
+      {
+        "term": "Aesthetic Evaluation",
+        "reason": "Aesthetic evaluation judges quality, not civic remembrance or landmark creation."
+      },
+      {
+        "term": "Culture and Togetherness",
+        "reason": "Culture and Togetherness focuses on regional unity, whereas Remembering and Mark-Making is specific to monuments and public memorials."
+      }
+    ],
+    "distinction": "Remembering and Mark-Making (Function #5) explicitly designates public sculptures and monuments that anchor history and physical places.",
+    "explanation": "Lesson 1 Slide 33: '5. REMEMBERING AND MARK-MAKING: The monument of Rizal in Luneta Park is one example of a type of art that help us remember.'"
+  },
+  {
+    "id": 24,
+    "lesson": 1,
+    "lessonTitle": "Lesson 1: Introduction to Art Appreciation",
+    "type": "true_false",
+    "question": "Beauty in art appreciation is universally fixed with no room for subjective debate or cultural disagreement.",
+    "correctAnswer": false,
+    "explanation": "False. Lesson 1 Slide 21 explicitly opens: 'the connotation of beauty is a debatable topic... Though we have different notions of beauty, still it is a common denominator.'"
+  },
+  {
+    "id": 25,
+    "lesson": 1,
+    "lessonTitle": "Lesson 1: Introduction to Art Appreciation",
+    "type": "multiple_choice",
+    "question": "Which of the following is NOT one of the 5 key goals of art appreciation presented in Lesson 1?",
+    "options": [
+      "A. Understanding Context",
+      "B. Analyzing Elements and Principles",
+      "C. Maximizing Commercial Auction Value",
+      "D. Recognizing Styles and Movements"
+    ],
+    "correctAnswer": "C",
+    "explanation": "The five goals in Lesson 1 are: Understanding Context, Analyzing Elements and Principles, Recognizing Styles and Movements, Interpreting Meaning, and Evaluating Aesthetics. Maximizing auction value is completely absent."
+  },
+  {
+    "id": 26,
+    "lesson": 2,
+    "lessonTitle": "Lesson 2: Language of Art: Elements of Art",
+    "type": "multiple_choice",
+    "question": "What metaphor does Lesson 2 use to describe the role of the Elements of Art in visual communication?",
+    "options": [
+      "A. The blueprints of architecture",
+      "B. The 'ingredients' of visual communication",
+      "C. The mechanical gears of a clock",
+      "D. The mathematical formulas of composition"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Lesson 2 Slide 10: 'Think of these as the \"ingredients\" of visual communication. By combining Line, Shape, Form, Color, Value, Texture, and Space, artists are able to express ideas.'"
+  },
+  {
+    "id": 27,
+    "lesson": 2,
+    "lessonTitle": "Lesson 2: Language of Art: Elements of Art",
+    "type": "identification",
+    "question": "Which fundamental element of art provides the impression of a path and movement along a space, offering a one-dimensional quality to artwork?",
+    "canonicalAnswer": "Line",
+    "acceptedAlternatives": [
+      "Line Element",
+      "Lines"
+    ],
+    "acceptedVariations": [
+      "the line element"
+    ],
+    "requiredKeywords": [
+      "line"
+    ],
+    "nearMisses": [
+      {
+        "term": "Shape",
+        "reason": "Shape is a two-dimensional defined area, whereas line provides a one-dimensional path of movement."
+      },
+      {
+        "term": "Contour",
+        "reason": "Contour is a specific type/technique of line, not the elemental category itself."
+      }
+    ],
+    "distinction": "Line is the basic element that provides the impression of path, movement, and a one-dimensional foundation.",
+    "explanation": "Lesson 2 Slide 12-13: 'Lines are essential elements to art, as they provide the impression of path and movement along a space... lines provide a one-dimensional theme to the piece of artwork.'"
+  },
+  {
+    "id": 28,
+    "lesson": 2,
+    "lessonTitle": "Lesson 2: Language of Art: Elements of Art",
+    "type": "true_false",
+    "question": "Vertical and horizontal lines convey instability, high tension, and frantic excitement in an artwork.",
+    "correctAnswer": false,
+    "explanation": "False. Lesson 2 Slide 25 states that vertical and horizontal lines convey 'static and at rest impressions. It may mean lack of activity and represents stability.'"
+  },
+  {
+    "id": 29,
+    "lesson": 2,
+    "lessonTitle": "Lesson 2: Language of Art: Elements of Art",
+    "type": "multiple_choice",
+    "question": "Which type of line is slanted and used by artists to express feelings of instability, tension, rising, falling, or excitement?",
+    "options": [
+      "A. Horizontal Lines",
+      "B. Vertical Lines",
+      "C. Diagonal Lines",
+      "D. Regular Curved Lines"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Lesson 2 Slide 18 & 26: 'Diagonal Lines - these are slanted lines. They create an impression of rising or falling... Diagonal lines are used by artists to express feelings of instability, tension, or excitement.'"
+  },
+  {
+    "id": 30,
+    "lesson": 2,
+    "lessonTitle": "Lesson 2: Language of Art: Elements of Art",
+    "type": "identification",
+    "question": "What type of lines consist of connected combinations of diagonal lines that create an angular perspective and can evoke confusion, intense excitement, or anxiety?",
+    "canonicalAnswer": "Zigzag Lines",
+    "acceptedAlternatives": [
+      "Zigzag",
+      "Zig-zag Lines",
+      "Zig-zag"
+    ],
+    "acceptedVariations": [
+      "zig zag lines",
+      "zigzag line"
+    ],
+    "requiredKeywords": [
+      "zigzag"
+    ],
+    "nearMisses": [
+      {
+        "term": "Diagonal Lines",
+        "reason": "Diagonal lines are single slanted lines, whereas zigzag lines are connected series of alternating diagonal lines."
+      },
+      {
+        "term": "Curved Lines",
+        "reason": "Curved lines are non-angular and fluid, not sharp connected diagonals."
+      }
+    ],
+    "distinction": "Zigzag lines are specifically connected combinations of diagonal lines forming sharp angles that evoke chaos or confusion.",
+    "explanation": "Lesson 2 Slide 20 & 26: 'Zigzag Lines - these are connected combinations of diagonal lines... evoke feelings of too much excitement or anxiety.'"
+  },
+  {
+    "id": 31,
+    "lesson": 2,
+    "lessonTitle": "Lesson 2: Language of Art: Elements of Art",
+    "type": "true_false",
+    "question": "Curved lines have strictly defined linear directions that always establish rigidity and mathematical structure.",
+    "correctAnswer": false,
+    "explanation": "False. Lesson 2 Slide 22 states that curved lines 'do not appear linear; directions are not clearly established,' capturing organic forms like clouds, leaves, and flower edges."
+  },
+  {
+    "id": 32,
+    "lesson": 2,
+    "lessonTitle": "Lesson 2: Language of Art: Elements of Art",
+    "type": "multiple_choice",
+    "question": "What is the rapid, expressive sketching technique used in art to capture the action, form, and essential energy of a subject rather than minute details?",
+    "options": [
+      "A. Calligraphic Drawing",
+      "B. Gesture Drawing",
+      "C. Contour Drawing",
+      "D. Frottage Technique"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Lesson 2 Slide 28 defines Gesture Drawing as 'a rapid, expressive sketching technique used in art to capture the action, form, and essential energy of a subject—typically the human figure—rather than its minute details.'"
+  },
+  {
+    "id": 33,
+    "lesson": 2,
+    "lessonTitle": "Lesson 2: Language of Art: Elements of Art",
+    "type": "identification",
+    "question": "Which type of drawing lines define the edges, silhouette, and inner structural planes of a subject, effectively mapping its three-dimensional form without relying on shading?",
+    "canonicalAnswer": "Contour Lines",
+    "acceptedAlternatives": [
+      "Contour",
+      "Contour Line",
+      "Contour Drawing"
+    ],
+    "acceptedVariations": [
+      "contours",
+      "contour line drawing"
+    ],
+    "requiredKeywords": [
+      "contour"
+    ],
+    "nearMisses": [
+      {
+        "term": "Gesture Drawing",
+        "reason": "Gesture drawing captures fleeting energy and rapid motion, whereas contour lines meticulously map boundaries and structural planes without shading."
+      },
+      {
+        "term": "Calligraphy",
+        "reason": "Calligraphy is stylized beautiful lettering, not structural plane mapping."
+      }
+    ],
+    "distinction": "Contour lines specifically map boundaries, silhouettes, and inner structural edges without shading.",
+    "explanation": "Lesson 2 Slide 27: 'CONTOUR LINES: They define the edges, silhouette, and, in some cases, the inner structural planes of a subject, effectively mapping its three-dimensional form without relying on shading.'"
+  },
+  {
+    "id": 34,
+    "lesson": 2,
+    "lessonTitle": "Lesson 2: Language of Art: Elements of Art",
+    "type": "true_false",
+    "question": "The etymological meaning of the word 'Calligraphy' is 'beautiful handwriting.'",
+    "correctAnswer": true,
+    "explanation": "True. Lesson 2 Slide 29 states: 'Calligraphy means “beautiful handwriting.” It is often associated with Asian characters... writing is a process of creating art using lines and different strokes.'"
+  },
+  {
+    "id": 35,
+    "lesson": 2,
+    "lessonTitle": "Lesson 2: Language of Art: Elements of Art",
+    "type": "multiple_choice",
+    "question": "According to Lesson 2, Philippine calligraphy is culturally rooted in which historical writing traditions?",
+    "options": [
+      "A. Latin, Cyrillic, and Celtic scripts",
+      "B. Indian, Sulawesi and Kawi, Indo-Arabic, and Islamic writing arts",
+      "C. Egyptian hieroglyphics and Phoenician cuneiform",
+      "D. Traditional Japanese Kanji and Modern Hangul exclusively"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Lesson 2 Slide 30 specifies: 'In the Philippines, there are different ethno-linguistic bases. The Philippine Calligraphy is rooted in Indian, Sulawesi and Kawi, Indo, Arabic and Islamic writing arts.'"
+  },
+  {
+    "id": 36,
+    "lesson": 2,
+    "lessonTitle": "Lesson 2: Language of Art: Elements of Art",
+    "type": "identification",
+    "question": "What element of art conveys a defined two-dimensional area recognizable through its outline?",
+    "canonicalAnswer": "Shape",
+    "acceptedAlternatives": [
+      "Shapes",
+      "Shape Element"
+    ],
+    "acceptedVariations": [
+      "shape"
+    ],
+    "requiredKeywords": [
+      "shape"
+    ],
+    "nearMisses": [
+      {
+        "term": "Form",
+        "reason": "Form is three-dimensional (possesses depth), whereas shape is strictly two-dimensional (length and width)."
+      },
+      {
+        "term": "Space",
+        "reason": "Space is the entire area in which elements operate, not the 2D enclosed outline."
+      }
+    ],
+    "distinction": "Shape is strictly 2D defined by an outline; Form adds the third dimension of depth.",
+    "explanation": "Lesson 2 Slide 33: 'SHAPE: A shape conveys a defined two-dimensional area. It has an outline around, and it is recognizable through its form.'"
+  },
+  {
+    "id": 37,
+    "lesson": 2,
+    "lessonTitle": "Lesson 2: Language of Art: Elements of Art",
+    "type": "true_false",
+    "question": "Free-form or organic shapes are strictly measured using mathematical formulas and include shapes like pentagons and trapezoids.",
+    "correctAnswer": false,
+    "explanation": "False. Accurately measured mathematical shapes are Geometric Shapes. Free-form (organic) shapes are irregular, combining curves and angles naturally found in flowers, animals, and trees (Slide 34-35)."
+  },
+  {
+    "id": 38,
+    "lesson": 2,
+    "lessonTitle": "Lesson 2: Language of Art: Elements of Art",
+    "type": "multiple_choice",
+    "question": "What is the primary characterizing physical component that distinguishes Form from Shape?",
+    "options": [
+      "A. Hue and saturation",
+      "B. Depth (three-dimensionality)",
+      "C. Linear contour width",
+      "D. Texture smoothness"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Lesson 2 Slide 36 explains: 'They are three-dimensional aspects of spaces and shapes. While shapes have length and width or diameter, a characterizing component of form is its depth.'"
+  },
+  {
+    "id": 39,
+    "lesson": 2,
+    "lessonTitle": "Lesson 2: Language of Art: Elements of Art",
+    "type": "identification",
+    "question": "What is the Italian term—meaning 'bright' and 'dark'—that refers to the dramatic contrast between light and shadow used to create the illusion of three-dimensional volume on a two-dimensional surface?",
+    "canonicalAnswer": "Chiaroscuro",
+    "acceptedAlternatives": [
+      "Chiaroscuro Technique",
+      "Chiaro-scuro"
+    ],
+    "acceptedVariations": [
+      "chiaroscuro"
+    ],
+    "requiredKeywords": [
+      "chiaroscuro"
+    ],
+    "nearMisses": [
+      {
+        "term": "Sfumato",
+        "reason": "Sfumato refers to hazy, smoke-like blending without harsh borders (popularized by Da Vinci), not the light-dark modeling of chiaroscuro."
+      },
+      {
+        "term": "Tenebrism",
+        "reason": "Tenebrism is an exaggerated, pitch-black theatrical dark style, while chiaroscuro is the general Italian principle of modeling volume with light (chiaro) and dark (oscuro)."
+      }
+    ],
+    "distinction": "Chiaroscuro translates literally to bright (chiaro) and dark (oscuro) and models 3D volume using light and shadow.",
+    "explanation": "Lesson 2 Slide 37: 'CHIAROSCURO: It is an Italian word that means bright (chiaro) and dark (oscuro). It refers to the use of strong contrasts between light and shadow to create the illusion of three-dimensional volume on a two-dimensional surface.'"
+  },
+  {
+    "id": 40,
+    "lesson": 2,
+    "lessonTitle": "Lesson 2: Language of Art: Elements of Art",
+    "type": "true_false",
+    "question": "Giovanni Baglione's painting 'Divine Love Conquering Earthly Love' (1602–1603) is featured in Lesson 2 as an example of Chiaroscuro.",
+    "correctAnswer": true,
+    "explanation": "True. Lesson 2 Slide 37 explicitly presents Giovanni Baglione's 'Divine Love Conquering Earthly Love (1602–1603)' as the visual masterwork demonstrating chiaroscuro."
+  },
+  {
+    "id": 41,
+    "lesson": 2,
+    "lessonTitle": "Lesson 2: Language of Art: Elements of Art",
+    "type": "multiple_choice",
+    "question": "In compositional space, what term designates the empty area that surrounds the main subject to define or enhance the composition?",
+    "options": [
+      "A. Positive Space",
+      "B. Negative Space",
+      "C. Subtractive Space",
+      "D. Radial Space"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Lesson 2 Slide 40 defines Negative Space as 'the empty area surrounding a subject (positive space) to create, define, or enhance the overall composition.'"
+  },
+  {
+    "id": 42,
+    "lesson": 2,
+    "lessonTitle": "Lesson 2: Language of Art: Elements of Art",
+    "type": "identification",
+    "question": "What type of space refers to the primary subject, object, or central area of interest within a composition?",
+    "canonicalAnswer": "Positive Space",
+    "acceptedAlternatives": [
+      "Positive",
+      "Positive Area"
+    ],
+    "acceptedVariations": [
+      "positive spaces"
+    ],
+    "requiredKeywords": [
+      "positive",
+      "space"
+    ],
+    "nearMisses": [
+      {
+        "term": "Negative Space",
+        "reason": "Negative space is the surrounding background or empty area around the subject."
+      },
+      {
+        "term": "Focal Point",
+        "reason": "Focal point is an emphasis technique, while Positive Space is the spatial classification of the subject itself."
+      }
+    ],
+    "distinction": "Positive Space contains the actual subject/object, whereas Negative Space is the unoccupied surrounding area.",
+    "explanation": "Lesson 2 Slide 39: 'Positive Space - the primary subject, object, or areas of interest within a composition.'"
+  },
+  {
+    "id": 43,
+    "lesson": 2,
+    "lessonTitle": "Lesson 2: Language of Art: Elements of Art",
+    "type": "true_false",
+    "question": "Color is an element of art that is fundamentally derived from light and the different reflections of it.",
+    "correctAnswer": true,
+    "explanation": "True. Lesson 2 Slide 45 states: 'Color is one of the elements of art that is derived from light and the different reflections of it.'"
+  },
+  {
+    "id": 44,
+    "lesson": 2,
+    "lessonTitle": "Lesson 2: Language of Art: Elements of Art",
+    "type": "multiple_choice",
+    "question": "Which property of color refers to the pure base color family on the color wheel—specifically the dominant wavelength without added white, black, or gray?",
+    "options": [
+      "A. Value",
+      "B. Intensity",
+      "C. Hue",
+      "D. Texture"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Lesson 2 Slide 46 defines Hue: 'the pure, base color family on the color wheel—specifically, the dominant wavelength of color. It is the name used to describe a color without any added white, black, or grey.'"
+  },
+  {
+    "id": 45,
+    "lesson": 2,
+    "lessonTitle": "Lesson 2: Language of Art: Elements of Art",
+    "type": "identification",
+    "question": "Which property of color describes the relative lightness or darkness of a hue, often used to create mood or represent gloomier themes?",
+    "canonicalAnswer": "Value",
+    "acceptedAlternatives": [
+      "Color Value",
+      "Tonal Value"
+    ],
+    "acceptedVariations": [
+      "value"
+    ],
+    "requiredKeywords": [
+      "value"
+    ],
+    "nearMisses": [
+      {
+        "term": "Intensity",
+        "reason": "Intensity refers to purity/brightness versus dullness, whereas Value refers strictly to lightness or darkness."
+      },
+      {
+        "term": "Hue",
+        "reason": "Hue is the base spectral color identity, independent of light/dark shading."
+      }
+    ],
+    "distinction": "Value is exclusively concerned with the spectrum between lightness and darkness.",
+    "explanation": "Lesson 2 Slide 47: '2. Value - it describes the lightness and darkness of color. There will be times that certain colors will seem to be darker to represent a darker or gloomier theme.'"
+  },
+  {
+    "id": 46,
+    "lesson": 2,
+    "lessonTitle": "Lesson 2: Language of Art: Elements of Art",
+    "type": "true_false",
+    "question": "Adding gray or a complementary color to a pure, unmixed hue increases its intensity and makes it more vibrant.",
+    "correctAnswer": false,
+    "explanation": "False. Lesson 2 Slide 49 states: 'A pure, unmixed color has high intensity, while adding gray or a complementary color (opposite on the color wheel) reduces its intensity.'"
+  },
+  {
+    "id": 47,
+    "lesson": 2,
+    "lessonTitle": "Lesson 2: Language of Art: Elements of Art",
+    "type": "multiple_choice",
+    "question": "Which property of color refers to how bright or dull the hue appears?",
+    "options": [
+      "A. Dimension",
+      "B. Intensity",
+      "C. Value",
+      "D. Chiaroscuro"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Lesson 2 Slide 49 defines Intensity as 'how bright or dull the use of hue is.'"
+  },
+  {
+    "id": 48,
+    "lesson": 2,
+    "lessonTitle": "Lesson 2: Language of Art: Elements of Art",
+    "type": "identification",
+    "question": "What element of art refers to how the subjects and objects of a piece feel if touched, or how their surface is visually simulated through uneven shading and highlights?",
+    "canonicalAnswer": "Texture",
+    "acceptedAlternatives": [
+      "Texture Element",
+      "Surface Texture",
+      "Tactile Texture"
+    ],
+    "acceptedVariations": [
+      "textures"
+    ],
+    "requiredKeywords": [
+      "texture"
+    ],
+    "nearMisses": [
+      {
+        "term": "Form",
+        "reason": "Form is three-dimensional spatial volume, not surface tactile feel."
+      },
+      {
+        "term": "Frottage",
+        "reason": "Frottage is a technique used to capture texture, not the core element itself."
+      }
+    ],
+    "distinction": "Texture is the element describing perceived or actual tactile surface quality (rough, smooth, matte, shiny).",
+    "explanation": "Lesson 2 Slide 51: 'TEXTURE: It refers to how the subjects and objects of the piece feels if touched. Artists often use texture to establish visual balance or contrast.'"
+  },
+  {
+    "id": 49,
+    "lesson": 2,
+    "lessonTitle": "Lesson 2: Language of Art: Elements of Art",
+    "type": "true_false",
+    "question": "Matte surfaces are characterized by sharp, high-intensity highlights such as those seen on water surfaces and glass windows.",
+    "correctAnswer": false,
+    "explanation": "False. Lesson 2 Slide 53 states: 'Matte Surfaces - usually apparent in papers, denim, unfinished wood, or human skin' and reflect soft, dull light, whereas Shiny Textures have distinct highlights like windows or water."
+  },
+  {
+    "id": 50,
+    "lesson": 2,
+    "lessonTitle": "Lesson 2: Language of Art: Elements of Art",
+    "type": "multiple_choice",
+    "question": "What is the artistic technique where paper is placed over a textured object and gently rubbed with a pencil, crayon, or oil pastel to capture its surface pattern?",
+    "options": [
+      "A. Impasto technique",
+      "B. Frottage technique",
+      "C. Glazing technique",
+      "D. Sgraffito technique"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Lesson 2 Slide 60 instructs: 'Create an artwork using the frottage technique by placing paper over textured objects found in your surroundings and gently rubbing the surface with a pencil, crayon, or oil pastel.'"
+  },
+  {
+    "id": 51,
+    "lesson": 3,
+    "lessonTitle": "Lesson 3: Principles of Design and Psychology in Art",
+    "type": "multiple_choice",
+    "question": "How does Lesson 3 define the Principles of Design?",
+    "options": [
+      "A. Strict legal rules enforced by international fine art academies",
+      "B. Long-held composition techniques proven and used by fine and graphic artists to communicate ideas effectively",
+      "C. The physical materials and chemical pigments required to paint on canvas",
+      "D. Psychological tests designed to diagnose mental disorders through drawing"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Lesson 3 Slide 4: 'Principles of Design are long held composition techniques which have been prove and used by both fine and graphic artists to communicate ideas and concepts effectively.'"
+  },
+  {
+    "id": 52,
+    "lesson": 3,
+    "lessonTitle": "Lesson 3: Principles of Design and Psychology in Art",
+    "type": "identification",
+    "question": "Which principle of design is defined by the repetition of design elements or objects that suggest movement or flow, also manifested in musical beats and poetic meter?",
+    "canonicalAnswer": "Rhythm",
+    "acceptedAlternatives": [
+      "Visual Rhythm",
+      "Rhythm Principle"
+    ],
+    "acceptedVariations": [
+      "rhythm"
+    ],
+    "requiredKeywords": [
+      "rhythm"
+    ],
+    "nearMisses": [
+      {
+        "term": "Pattern",
+        "reason": "Pattern is repetition that is consistent, organized, or predictable, whereas Rhythm specifically suggests flow and movement through repetition."
+      },
+      {
+        "term": "Movement",
+        "reason": "Movement is the perceived action, while Rhythm is the organizational principle of recurring intervals."
+      }
+    ],
+    "distinction": "Rhythm is defined by repetition suggesting movement or flow, sharing direct parallels with musical beats and poetry.",
+    "explanation": "Lesson 3 Slide 8: 'Rhythm: It is defined by the repetition of design, elements or objects that suggest movement or flow. This principle is also present in other forms of arts such as music and even poetry.'"
+  },
+  {
+    "id": 53,
+    "lesson": 3,
+    "lessonTitle": "Lesson 3: Principles of Design and Psychology in Art",
+    "type": "true_false",
+    "question": "Visual rhythm is observed in the repetition of positive spaces separated by negative spaces, stimulating the perception of movement.",
+    "correctAnswer": true,
+    "explanation": "True. Lesson 3 Slide 11: 'Visual Rhythm: This is observed in the repetition of positive spaces or ground and then separated by negative spaces. These principles stimulate the perception of movement.'"
+  },
+  {
+    "id": 54,
+    "lesson": 3,
+    "lessonTitle": "Lesson 3: Principles of Design and Psychology in Art",
+    "type": "multiple_choice",
+    "question": "Which principle of design is defined as the repetition of design, elements, or objects that is consistent, predictable, or organized?",
+    "options": [
+      "A. Chiaroscuro",
+      "B. Pattern",
+      "C. Informal Balance",
+      "D. Variety"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Lesson 3 Slide 13 defines Pattern as 'the repetition of design, elements or objects that is consistent, predictable, or organized.'"
+  },
+  {
+    "id": 55,
+    "lesson": 3,
+    "lessonTitle": "Lesson 3: Principles of Design and Psychology in Art",
+    "type": "identification",
+    "question": "Which type of pattern/rhythm is characterized by having identical beats, motifs, and uniform intervals of space between them?",
+    "canonicalAnswer": "Regular Pattern",
+    "acceptedAlternatives": [
+      "Regular Rhythm",
+      "Regular",
+      "Regular Pattern and Rhythm"
+    ],
+    "acceptedVariations": [
+      "regular patterns"
+    ],
+    "requiredKeywords": [
+      "regular"
+    ],
+    "nearMisses": [
+      {
+        "term": "Random Pattern",
+        "reason": "Random patterns lack regularity in the spaces in between."
+      },
+      {
+        "term": "Alternating Pattern",
+        "reason": "Alternating patterns employ two different motifs or changing intervals."
+      }
+    ],
+    "distinction": "Regular Pattern has identical motifs and unchanging, uniform intervals.",
+    "explanation": "Lesson 3 Slide 16: 'REGULAR PATTERN - Regular patterns are characterized by having identical, beats, motifs, and intervals of space between them.'"
+  },
+  {
+    "id": 56,
+    "lesson": 3,
+    "lessonTitle": "Lesson 3: Principles of Design and Psychology in Art",
+    "type": "true_false",
+    "question": "Random patterns are characterized by strict mathematical regularity and identical spacing between motifs.",
+    "correctAnswer": false,
+    "explanation": "False. Lesson 3 Slide 15 explicitly states: 'RANDOM PATTERN - Random patterns are characterized by the lack of regularity in the spaces in between.'"
+  },
+  {
+    "id": 57,
+    "lesson": 3,
+    "lessonTitle": "Lesson 3: Principles of Design and Psychology in Art",
+    "type": "multiple_choice",
+    "question": "Which type of rhythm or pattern portrays a steady change in the motif every time it is repeated, making each beat appear slightly different from the previous one?",
+    "options": [
+      "A. Regular Pattern",
+      "B. Alternating Pattern",
+      "C. Progressive Pattern",
+      "D. Random Pattern"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Lesson 3 Slide 20: 'PROGRESSIVE PATTERN - Progressive patterns or rhythm portray change in beat every time it is repeated. Accordingly, the changes are steady. For each beat, they appear slightly different with each other.'"
+  },
+  {
+    "id": 58,
+    "lesson": 3,
+    "lessonTitle": "Lesson 3: Principles of Design and Psychology in Art",
+    "type": "identification",
+    "question": "What type of rhythm/pattern employs two types of motifs or beats arranged in alternating distances or sequences?",
+    "canonicalAnswer": "Alternating Pattern",
+    "acceptedAlternatives": [
+      "Alternating Rhythm",
+      "Alternating",
+      "Alternating Pattern and Rhythm"
+    ],
+    "acceptedVariations": [
+      "alternating patterns"
+    ],
+    "requiredKeywords": [
+      "alternating"
+    ],
+    "nearMisses": [
+      {
+        "term": "Progressive Pattern",
+        "reason": "Progressive pattern modifies the motif steadily, whereas alternating switches between two motifs."
+      },
+      {
+        "term": "Regular Pattern",
+        "reason": "Regular pattern uses only a single identical motif throughout."
+      }
+    ],
+    "distinction": "Alternating pattern specifically alternates between two distinct beats or motifs.",
+    "explanation": "Lesson 3 Slide 19: 'ALTERNATING PATTERN - This type of rhythm employs two types of beats or motive. First and second beats are usually arranged in alternating distances or intervals.'"
+  },
+  {
+    "id": 59,
+    "lesson": 3,
+    "lessonTitle": "Lesson 3: Principles of Design and Psychology in Art",
+    "type": "true_false",
+    "question": "Formal balance in an artwork demonstrates equal weight on each side and is also referred to as bilateral symmetry.",
+    "correctAnswer": true,
+    "explanation": "True. Lesson 3 Slide 27: 'Formal balance demonstrates equal rigor, strength or weight on each side... Sometimes, formal balance is characterized by symmetry or another way of calling this is bilateral symmetry.'"
+  },
+  {
+    "id": 60,
+    "lesson": 3,
+    "lessonTitle": "Lesson 3: Principles of Design and Psychology in Art",
+    "type": "multiple_choice",
+    "question": "What type of balance occurs when elements radiate outward in all directions from a central focal point?",
+    "options": [
+      "A. Bilateral Balance",
+      "B. Informal Balance",
+      "C. Radial Balance",
+      "D. Linear Balance"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Lesson 3 Slide 29: 'RADIAL BALANCE - This is a type of balance where the design of the art piece radiates from the central point and an outward direction.'"
+  },
+  {
+    "id": 61,
+    "lesson": 3,
+    "lessonTitle": "Lesson 3: Principles of Design and Psychology in Art",
+    "type": "identification",
+    "question": "Which renowned psychologist incorporated the mandala as a representation of personality in his theory of Analytic Psychology, exemplifying radial balance?",
+    "canonicalAnswer": "Carl Jung",
+    "acceptedAlternatives": [
+      "Jung",
+      "Carl Gustav Jung",
+      "C.G. Jung"
+    ],
+    "acceptedVariations": [
+      "carl jung"
+    ],
+    "requiredKeywords": [
+      "jung"
+    ],
+    "nearMisses": [
+      {
+        "term": "Sigmund Freud",
+        "reason": "Freud founded psychoanalysis, but Carl Jung developed Analytic Psychology and specifically explored mandalas for radial personality balance."
+      },
+      {
+        "term": "Ragans",
+        "reason": "Ragans is a textbook author cited in the references, not the theorist of Analytic Psychology."
+      }
+    ],
+    "distinction": "Carl Jung is the analytical psychologist explicitly cited in Slide 30 for the mandala's representation of personality.",
+    "explanation": "Lesson 3 Slide 30 cites: 'Mandala representation of personality in the theory of Analytic Psychology of Carl Jung' under Radial Balance."
+  },
+  {
+    "id": 62,
+    "lesson": 3,
+    "lessonTitle": "Lesson 3: Principles of Design and Psychology in Art",
+    "type": "true_false",
+    "question": "An artwork featuring informal (asymmetrical) balance automatically possesses lower aesthetic value and reflects poor compositional skill.",
+    "correctAnswer": false,
+    "explanation": "False. Lesson 3 Slide 31 explicitly corrects this: 'Most of the time, their outputs have informal balances. But this is not an indication of less aesthetic value. Rather, these artists have less conventional approaches by employing abstracted and complex balance portrayal.'"
+  },
+  {
+    "id": 63,
+    "lesson": 3,
+    "lessonTitle": "Lesson 3: Principles of Design and Psychology in Art",
+    "type": "multiple_choice",
+    "question": "Which masterwork by Leonardo da Vinci is cited in Lesson 3 to illustrate the principle of proportion through the geometric relationships of the human body?",
+    "options": [
+      "A. Mona Lisa",
+      "B. The Last Supper",
+      "C. Vitruvian Man",
+      "D. Salvator Mundi"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Lesson 3 Slide 33 cites Da Vinci's 'Vitruvian Man' as the prime example of Proportion—how the sizes of body parts and elements relate to each other."
+  },
+  {
+    "id": 64,
+    "lesson": 3,
+    "lessonTitle": "Lesson 3: Principles of Design and Psychology in Art",
+    "type": "identification",
+    "question": "Which ancient Greek philosopher and mathematician believed that the universe operates on a constant mathematical equation, inspiring Euclid's discovery of the Golden Mean ratio?",
+    "canonicalAnswer": "Pythagoras",
+    "acceptedAlternatives": [
+      "Pythagoras of Samos"
+    ],
+    "acceptedVariations": [
+      "pythagoras"
+    ],
+    "requiredKeywords": [
+      "pythagoras"
+    ],
+    "nearMisses": [
+      {
+        "term": "Euclid",
+        "reason": "Euclid was amused by Pythagoras' beliefs and explored the mathematical ratio; Pythagoras was the one who believed the universe operates on constant mathematical equations."
+      },
+      {
+        "term": "Aristotle",
+        "reason": "Aristotle was an ethical/metaphysical philosopher, not cited in the slides for the mathematical universe equation."
+      }
+    ],
+    "distinction": "Pythagoras believed the universe was mathematical; Euclid formalized the ratio.",
+    "explanation": "Lesson 3 Slide 34: '“Golden Mean” - PYTHAGORAS: Who believed that the world or the universe operates on a constant mathematical equation.'"
+  },
+  {
+    "id": 65,
+    "lesson": 3,
+    "lessonTitle": "Lesson 3: Principles of Design and Psychology in Art",
+    "type": "true_false",
+    "question": "Proportion compares an entire artwork's size against an external standard like a human or ruler, while Scale concerns internal relationships between parts.",
+    "correctAnswer": false,
+    "explanation": "False. It is the exact opposite! Lesson 3 Slide 44 clarifies: Scale compares size to an external standard (like a human or ruler) and focuses on overall size; Proportion is concerned with how internal sizes and elements relate to each other."
+  },
+  {
+    "id": 66,
+    "lesson": 3,
+    "lessonTitle": "Lesson 3: Principles of Design and Psychology in Art",
+    "type": "multiple_choice",
+    "question": "Which principle of design breeds interest and prevents visual monotony by introducing different colors, shapes, textures, and lines?",
+    "options": [
+      "A. Simplicity",
+      "B. Variety",
+      "C. Formal Balance",
+      "D. Repetition"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Lesson 3 Slide 45-46: 'Variety is the principle of art that breeds interest to the viewers or audience. Variety means adding different elements (colors, shapes, textures, lines) to make the artwork interesting.'"
+  },
+  {
+    "id": 67,
+    "lesson": 3,
+    "lessonTitle": "Lesson 3: Principles of Design and Psychology in Art",
+    "type": "identification",
+    "question": "Which principle of design creates different levels of visual dominance to direct viewer attention toward a focal point or narrative center?",
+    "canonicalAnswer": "Emphasis",
+    "acceptedAlternatives": [
+      "Emphasis Principle",
+      "Focal Point Emphasis"
+    ],
+    "acceptedVariations": [
+      "emphasis"
+    ],
+    "requiredKeywords": [
+      "emphasis"
+    ],
+    "nearMisses": [
+      {
+        "term": "Variety",
+        "reason": "Variety introduces differences to breed interest, while Emphasis creates focal dominance to guide attention."
+      },
+      {
+        "term": "Contrast",
+        "reason": "Contrast is one specific technique used to achieve Emphasis, not the overarching principle itself."
+      }
+    ],
+    "distinction": "Emphasis is the overarching principle that creates dominant focal points using techniques like contrast, isolation, and convergence.",
+    "explanation": "Lesson 3 Slide 47: 'Emphasis is the principle of art that improves the variety by creating different levels of emphasis to draw areas that may draw audience attention.'"
+  },
+  {
+    "id": 68,
+    "lesson": 3,
+    "lessonTitle": "Lesson 3: Principles of Design and Psychology in Art",
+    "type": "true_false",
+    "question": "In the technique of convergence, compositional elements and directional lines guide the viewer's gaze toward a central focal point.",
+    "correctAnswer": true,
+    "explanation": "True. Lesson 3 Slide 54: 'CONVERGENCE - This is a more complex technique that utilizes the elements to point at a direction of a focal point. The process of convergence directs the viewers using elements to converge at a focal point.'"
+  },
+  {
+    "id": 69,
+    "lesson": 3,
+    "lessonTitle": "Lesson 3: Principles of Design and Psychology in Art",
+    "type": "multiple_choice",
+    "question": "Placing an unexpected object in an otherwise uniform environment—such as placing a gun on a bed of roses or a single yellow chair among black chairs—is an example of which emphasis technique?",
+    "options": [
+      "A. Isolation",
+      "B. Unusual (Unconventional)",
+      "C. Location",
+      "D. Regular Pattern"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Lesson 3 Slide 55 defines 'UNUSUAL: The most complex of the approaches is the use of unconventional mechanisms. Bizarre and unexpected approaches can be made for emphasis such as putting a gun on a bed of roses... a yellow chair in a pile of black chairs.'"
+  },
+  {
+    "id": 70,
+    "lesson": 3,
+    "lessonTitle": "Lesson 3: Principles of Design and Psychology in Art",
+    "type": "identification",
+    "question": "What principle of design facilitates unity by ensuring that different elements and subjects work well and blend smoothly together into a pleasant, cohesive visual?",
+    "canonicalAnswer": "Harmony",
+    "acceptedAlternatives": [
+      "Harmonious Blending",
+      "Harmony Principle"
+    ],
+    "acceptedVariations": [
+      "harmony"
+    ],
+    "requiredKeywords": [
+      "harmony"
+    ],
+    "nearMisses": [
+      {
+        "term": "Unity",
+        "reason": "Unity is the resulting wholeness of the entire piece, whereas Harmony specifically facilitates that oneness through smooth blending of parts."
+      },
+      {
+        "term": "Rhythm",
+        "reason": "Rhythm suggests movement through repetition, not the smooth blending of disparate parts."
+      }
+    ],
+    "distinction": "Harmony is the smooth blending and pleasant relationship between separate elements, directly facilitating unity.",
+    "explanation": "Lesson 3 Slide 56-57: 'Harmony is the principle that facilitates the process of unity by recognizing the importance of separate elements and subjects but are somehow related to each other. In simple term, harmony happens different elements work well or blend smoothly together.'"
+  },
+  {
+    "id": 71,
+    "lesson": 3,
+    "lessonTitle": "Lesson 3: Principles of Design and Psychology in Art",
+    "type": "true_false",
+    "question": "Unity is the quality of wholeness and oneness achieved through the proper organization of art elements and principles.",
+    "correctAnswer": true,
+    "explanation": "True. Lesson 3 Slide 59-60 states: 'Unity is the principle of art that refers to arrangement of different pieces producing the harmonious, balanced, and complete whole artwork. Unity is a quality of wholeness and oneness.'"
+  },
+  {
+    "id": 72,
+    "lesson": 3,
+    "lessonTitle": "Lesson 3: Principles of Design and Psychology in Art",
+    "type": "multiple_choice",
+    "question": "Which of the following are the three explicit ways to create unity listed in Lesson 3?",
+    "options": [
+      "A. Contrast, Chiaroscuro, and Impasto",
+      "B. Simplicity, Repetition, and Proximity",
+      "C. Hue, Value, and Intensity",
+      "D. Additive, Subtractive, and Casting"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Lesson 3 Slide 61 explicitly lists: 'WAYS TO CREATE UNITY: Simplicity, Repetition, Proximity.'"
+  },
+  {
+    "id": 73,
+    "lesson": 3,
+    "lessonTitle": "Lesson 3: Principles of Design and Psychology in Art",
+    "type": "identification",
+    "question": "What psychological theory explains that the human brain automatically perceives a whole image first before noticing its individual components, as demonstrated by how we see the WWF panda logo?",
+    "canonicalAnswer": "Gestalt Theory",
+    "acceptedAlternatives": [
+      "Gestalt",
+      "Gestalt Psychology",
+      "Gestalt Principles"
+    ],
+    "acceptedVariations": [
+      "gastalt theory",
+      "gestalt theory of perception"
+    ],
+    "requiredKeywords": [
+      "gestalt"
+    ],
+    "nearMisses": [
+      {
+        "term": "Analytic Psychology",
+        "reason": "Analytic Psychology is Carl Jung's theory involving mandalas, not the visual perception theory of holistic grouping."
+      },
+      {
+        "term": "Color Psychology",
+        "reason": "Color psychology deals with the emotional meaning of hues, not visual closure and whole-image perception."
+      }
+    ],
+    "distinction": "Gestalt Theory states that 'the whole is other than the sum of its parts'—the brain automatically perceives unified wholes first.",
+    "explanation": "Lesson 3 Slide 67-68: 'Gestalt Theory: In short, says that people see the whole image first before noticing the small parts. The brain automatically connects separate shapes and lines to form one complete image (e.g. WWF panda logo).'"
+  },
+  {
+    "id": 74,
+    "lesson": 3,
+    "lessonTitle": "Lesson 3: Principles of Design and Psychology in Art",
+    "type": "true_false",
+    "question": "In classical architectural and compositional symbolism, a half-circle or dome often symbolizes femininity (womb-like shape), eternity (no corners), and equality/wholeness.",
+    "correctAnswer": true,
+    "explanation": "True. Lesson 3 Slide 72 highlights that the half-circle or dome symbolizes femininity, eternity, and equality or socialism (wholeness)."
+  },
+  {
+    "id": 75,
+    "lesson": 3,
+    "lessonTitle": "Lesson 3: Principles of Design and Psychology in Art",
+    "type": "multiple_choice",
+    "question": "In Leonardo da Vinci's 'Madonna of the Rocks', what compositional geometric arrangement is used to suggest stability and guide viewer attention upward toward the central apex figure?",
+    "options": [
+      "A. Elliptical Spiral",
+      "B. Inverted Trapezoid",
+      "C. Triangle (Pyramidal Composition)",
+      "D. Diagonal Cross"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Lesson 3 Slide 73-74: 'TRIANGLE: When used in a composition suggests relationship. In Leonardo Da Vinci's \"Madonna of the Rocks\" the triangular arrangement of the figures, with the Madonna at the apex may suggest stability and inclination toward the central figure.'"
+  },
+  {
+    "id": 76,
+    "lesson": 4,
+    "lessonTitle": "Lesson 4: Materials and Techniques",
+    "type": "multiple_choice",
+    "question": "What term refers to the physical substances artists use to construct artworks—such as pigments, marble, bronze, or charcoal—which shape texture, color, and survival over time?",
+    "options": [
+      "A. Techniques",
+      "B. Materials (Media)",
+      "C. Principles",
+      "D. Matrices"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Lesson 4 Slide 5: 'MATERIALS: Artists have a vast array of materials at their disposal, ranging from traditional mediums like oil paints, watercolors, and charcoal to modern innovations... Each medium offers unique possibilities and challenges.'"
+  },
+  {
+    "id": 77,
+    "lesson": 4,
+    "lessonTitle": "Lesson 4: Materials and Techniques",
+    "type": "identification",
+    "question": "What term refers to the specific methods and processes artists employ to manipulate materials, such as carving, delicate watercolor brushstrokes, or etching?",
+    "canonicalAnswer": "Techniques",
+    "acceptedAlternatives": [
+      "Technique",
+      "Artistic Techniques"
+    ],
+    "acceptedVariations": [
+      "technique"
+    ],
+    "requiredKeywords": [
+      "technique"
+    ],
+    "nearMisses": [
+      {
+        "term": "Medium",
+        "reason": "Medium refers to the physical material itself (e.g. oil paint), whereas Technique refers to how the artist manipulates that material."
+      },
+      {
+        "term": "Elements",
+        "reason": "Elements are conceptual tools (line, shape), not physical handling methods."
+      }
+    ],
+    "distinction": "Techniques are the procedural manipulation methods; materials are the physical substances.",
+    "explanation": "Lesson 4 Slide 6: 'TECHNIQUES: This refers to the methods artists employ to manipulate these materials. Techniques can vary widely, from the delicate brushstrokes of a watercolor painting to the bold, expressive lines of a charcoal drawing.'"
+  },
+  {
+    "id": 78,
+    "lesson": 4,
+    "lessonTitle": "Lesson 4: Materials and Techniques",
+    "type": "true_false",
+    "question": "Drawing serves exclusively as a preparatory step for other mediums and has never achieved status as an independent, standalone art form.",
+    "correctAnswer": false,
+    "explanation": "False. Lesson 4 Slide 8 emphasizes: 'Drawing is one of the most foundational and versatile artistic practices, functioning both as a preparatory step for other media and as a standalone art form.'"
+  },
+  {
+    "id": 79,
+    "lesson": 4,
+    "lessonTitle": "Lesson 4: Materials and Techniques",
+    "type": "multiple_choice",
+    "question": "In graphite pencil grading, what is the visual and physical difference between 'H' grade pencils and 'B' grade pencils?",
+    "options": [
+      "A. H grades are softer and create darker marks; B grades are harder and create lighter lines",
+      "B. H grades are harder and produce lighter, finer lines; B grades are softer and create darker, richer marks",
+      "C. H pencils contain colored wax, whereas B pencils contain pure compressed carbon",
+      "D. H pencils are water-soluble, while B pencils are permanent waterproof graphite"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Lesson 4 Slide 12: 'Harder pencils (e.g., H grades) produce lighter, finer lines, while softer pencils (e.g., B grades) create darker, richer marks.'"
+  },
+  {
+    "id": 80,
+    "lesson": 4,
+    "lessonTitle": "Lesson 4: Materials and Techniques",
+    "type": "identification",
+    "question": "Which Northern Renaissance master created a famous 'Self-Portrait at 13' (1484), showcasing early mastery of controlled lines, values, and pencil/silverpoint drawing?",
+    "canonicalAnswer": "Albrecht Dürer",
+    "acceptedAlternatives": [
+      "Albrecht Durer",
+      "Dürer",
+      "Durer"
+    ],
+    "acceptedVariations": [
+      "albrecht duerer",
+      "albrecht durer"
+    ],
+    "requiredKeywords": [
+      "durer"
+    ],
+    "nearMisses": [
+      {
+        "term": "Rembrandt",
+        "reason": "Rembrandt is cited for ink drawing ('Satire on Art Criticism'), not the 'Self-Portrait at 13'."
+      },
+      {
+        "term": "Jan van Eyck",
+        "reason": "Van Eyck is celebrated for oil painting (Arnolfini Portrait), not pencil self-portraits at age 13."
+      }
+    ],
+    "distinction": "Albrecht Dürer created the 1484 'Self-Portrait at 13' demonstrating exquisite linear drawing precision.",
+    "explanation": "Lesson 4 Slide 13: 'Albrecht Dürer‘s self portrait at 13 created 1484, is an example of how pencil uses as a medium in a piece of art.'"
+  },
+  {
+    "id": 81,
+    "lesson": 4,
+    "lessonTitle": "Lesson 4: Materials and Techniques",
+    "type": "true_false",
+    "question": "Vine charcoal produces lighter, more delicate lines, while compressed charcoal produces bold, dense, velvety black marks.",
+    "correctAnswer": true,
+    "explanation": "True. Lesson 4 Slide 15: 'Vine charcoal produces lighter, more delicate lines, while compressed charcoal allows for bold, dense marks.'"
+  },
+  {
+    "id": 82,
+    "lesson": 4,
+    "lessonTitle": "Lesson 4: Materials and Techniques",
+    "type": "multiple_choice",
+    "question": "Which English sculptor and draughtsman served as an official war artist, depicting citizens sheltered during the London Blitz and creating the drawing 'Sleeping Mother and Child' (1982)?",
+    "options": [
+      "A. Antony Gormley",
+      "B. Henry Moore",
+      "C. Edgar Degas",
+      "D. Anthony van Dyck"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Lesson 4 Slide 16-17 highlights Henry Moore (1898–1986), whose charcoal works depicted people sheltering during the Blitz and explored maternal bonds in 'Sleeping Mother and Child'."
+  },
+  {
+    "id": 83,
+    "lesson": 4,
+    "lessonTitle": "Lesson 4: Materials and Techniques",
+    "type": "identification",
+    "question": "Which dry drawing medium is composed of pigment mixed with a wax binder, allowing for immediate vibrant color and graphic layering?",
+    "canonicalAnswer": "Crayon",
+    "acceptedAlternatives": [
+      "Wax Crayon",
+      "Crayons",
+      "Wax Crayons"
+    ],
+    "acceptedVariations": [
+      "crayon"
+    ],
+    "requiredKeywords": [
+      "crayon"
+    ],
+    "nearMisses": [
+      {
+        "term": "Oil Pastel",
+        "reason": "Oil pastels use an oil-based binder providing a creamy blending texture, whereas crayons use wax providing a firmer, graphic waxy stroke."
+      },
+      {
+        "term": "Chalk Pastel",
+        "reason": "Chalk pastels use gum/resin and powdered pigment, containing no wax."
+      }
+    ],
+    "distinction": "Crayons are specifically defined by their wax binder and firm graphic stroke.",
+    "explanation": "Lesson 4 Slide 18-19: 'CRAYON: Crayons, made from pigment mixed with wax... The waxy texture allows for vibrant colors and a sense of immediacy in the drawing process.'"
+  },
+  {
+    "id": 84,
+    "lesson": 4,
+    "lessonTitle": "Lesson 4: Materials and Techniques",
+    "type": "true_false",
+    "question": "Chalk pastels are bound with an oil binder that makes them completely immune to smudging and permanent without fixative.",
+    "correctAnswer": false,
+    "explanation": "False. Chalk pastels are bound with a small amount of gum or resin, producing a soft, powdery, blendable medium that requires textured paper to hold pigment. Oil pastels use oil binders (Slide 20, 24)."
+  },
+  {
+    "id": 85,
+    "lesson": 4,
+    "lessonTitle": "Lesson 4: Materials and Techniques",
+    "type": "multiple_choice",
+    "question": "Which French master is renowned for layering chalk pastels on textured paper to capture luminous stage light and the delicate tulle costumes of ballet dancers in works like 'The Star' (1878)?",
+    "options": [
+      "A. Claude Monet",
+      "B. Edgar Degas",
+      "C. Édouard Manet",
+      "D. Auguste Rodin"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Lesson 4 Slide 22-23 highlights Edgar Degas: 'Edgar Degas is renowned for his use of pastels, particularly in his depictions of dancers. In works like The Star (1878), Degas layered pastels to create luminous, dynamic compositions.'"
+  },
+  {
+    "id": 86,
+    "lesson": 4,
+    "lessonTitle": "Lesson 4: Materials and Techniques",
+    "type": "identification",
+    "question": "Which Flemish Baroque master created 'Study Head of a Young Woman' (ca. 1618–20) on paper laid down on wood, demonstrating the blending potential of oil-based drawing media?",
+    "canonicalAnswer": "Anthony van Dyck",
+    "acceptedAlternatives": [
+      "Van Dyck",
+      "Anthony Van Dyke",
+      "Anton van Dyck"
+    ],
+    "acceptedVariations": [
+      "anthony van dyck"
+    ],
+    "requiredKeywords": [
+      "dyck"
+    ],
+    "nearMisses": [
+      {
+        "term": "Jan van Eyck",
+        "reason": "Jan van Eyck is the 15th-century painter of the Arnolfini Portrait; Anthony van Dyck was a 17th-century Baroque master."
+      },
+      {
+        "term": "Peter Paul Rubens",
+        "reason": "Rubens was Van Dyck's master, but the slide explicitly credits Anthony van Dyck."
+      }
+    ],
+    "distinction": "Anthony van Dyck painted the 'Study Head of a Young Woman' cited in Slide 26.",
+    "explanation": "Lesson 4 Slide 26: 'Anthony van Dyck’s Study Head of a Young Woman (ca. 1618–20) demonstrates the potential of oilbased drawing media, here applied on paper laid down on wood.'"
+  },
+  {
+    "id": 87,
+    "lesson": 4,
+    "lessonTitle": "Lesson 4: Materials and Techniques",
+    "type": "true_false",
+    "question": "Rembrandt's 'Satire on Art Criticism' (c. 1644) demonstrates how pen and ink drawing can combine delicate, precise lines with gestural energetic strokes to convey humor and critique.",
+    "correctAnswer": true,
+    "explanation": "True. Lesson 4 Slide 31-32 states that Rembrandt's 'Satire on Art Criticism' exemplifies the versatility of ink drawing with biting commentary and dynamic gestural linework."
+  },
+  {
+    "id": 88,
+    "lesson": 4,
+    "lessonTitle": "Lesson 4: Materials and Techniques",
+    "type": "multiple_choice",
+    "question": "What is the traditional water-soluble binder used in watercolor paint to adhere ground pigments to paper fibers?",
+    "options": [
+      "A. Linseed oil",
+      "B. Gum arabic",
+      "C. Egg yolk",
+      "D. Molten beeswax"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Lesson 4 Slide 35 explains that watercolor is made by mixing ground pigments with a water-soluble binder, 'such as gum arabic, which helps the pigment adhere to the surface.'"
+  },
+  {
+    "id": 89,
+    "lesson": 4,
+    "lessonTitle": "Lesson 4: Materials and Techniques",
+    "type": "identification",
+    "question": "What painting medium—often called 'opaque watercolor'—uses gum arabic as a binder combined with additional white pigment or chalk to produce an opaque, matte finish?",
+    "canonicalAnswer": "Gouache",
+    "acceptedAlternatives": [
+      "Gouache Paint",
+      "Opaque Watercolor"
+    ],
+    "acceptedVariations": [
+      "guache",
+      "gouache"
+    ],
+    "requiredKeywords": [
+      "gouache"
+    ],
+    "nearMisses": [
+      {
+        "term": "Tempera",
+        "reason": "Tempera uses egg yolk as a binder, whereas gouache uses gum arabic plus white chalk/pigment."
+      },
+      {
+        "term": "Acrylic",
+        "reason": "Acrylic uses synthetic polymers, not gum arabic."
+      }
+    ],
+    "distinction": "Gouache is uniquely defined as opaque watercolor utilizing gum arabic supplemented with white pigment/chalk.",
+    "explanation": "Lesson 4 Slide 37-38: 'GOUACHE: Often referred to as \"opaque watercolor\"... uses gum arabic as a binder, but it also includes additional white pigment or chalk, giving it a more opaque and matte finish.'"
+  },
+  {
+    "id": 90,
+    "lesson": 4,
+    "lessonTitle": "Lesson 4: Materials and Techniques",
+    "type": "true_false",
+    "question": "Acrylic paint was invented in ancient Greece and dries very slowly over several months, allowing prolonged wet-into-wet blending.",
+    "correctAnswer": false,
+    "explanation": "False. Lesson 4 Slide 39-40 notes that acrylic paint was invented in the mid-20th century from synthetic polymers and is celebrated for its rapid drying properties and water-resistant finish."
+  },
+  {
+    "id": 91,
+    "lesson": 4,
+    "lessonTitle": "Lesson 4: Materials and Techniques",
+    "type": "multiple_choice",
+    "question": "Which fresco painting technique involves applying water-mixed pigments directly onto wet lime plaster so that the painting chemically fuses into the wall as it cures?",
+    "options": [
+      "A. Fresco Secco",
+      "B. Buon Fresco (True Fresco)",
+      "C. Encaustic",
+      "D. Impasto"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Lesson 4 Slide 42: 'BUON FRESCO: It is a painting technique in which the pigments mixed with water are applied to wet plaster and becomes part of the wall as it dries.'"
+  },
+  {
+    "id": 92,
+    "lesson": 4,
+    "lessonTitle": "Lesson 4: Materials and Techniques",
+    "type": "identification",
+    "question": "In buon fresco painting, what Italian term—meaning 'a day's work'—refers to the specific section of wet plaster an artist must complete before the plaster cures?",
+    "canonicalAnswer": "Giornata",
+    "acceptedAlternatives": [
+      "Giornate",
+      "A Day's Work"
+    ],
+    "acceptedVariations": [
+      "giornata"
+    ],
+    "requiredKeywords": [
+      "giornata"
+    ],
+    "nearMisses": [
+      {
+        "term": "Chiaroscuro",
+        "reason": "Chiaroscuro is light-dark modeling, not a section of plaster."
+      },
+      {
+        "term": "Intonaco",
+        "reason": "Intonaco is the final wet plaster layer, while Giornata is the specific measure of one day's section of that plaster."
+      }
+    ],
+    "distinction": "Giornata comes from the Italian for 'a day's work' and denotes the daily plaster boundary in fresco.",
+    "explanation": "Lesson 4 Slide 43: 'work quickly before the plaster sets, often in sections known as giornata, a term derived from the Italian word for ‘a day’s work’.'"
+  },
+  {
+    "id": 93,
+    "lesson": 4,
+    "lessonTitle": "Lesson 4: Materials and Techniques",
+    "type": "true_false",
+    "question": "Fresco secco is painted on dry plaster and is much more permanent and durable than buon fresco because pigments penetrate deeper into the cured wall.",
+    "correctAnswer": false,
+    "explanation": "False. Lesson 4 Slide 45-46 states that fresco secco (on dry plaster) is 'less durable, as the paint does not bond with the wall surface' compared to buon fresco."
+  },
+  {
+    "id": 94,
+    "lesson": 4,
+    "lessonTitle": "Lesson 4: Materials and Techniques",
+    "type": "multiple_choice",
+    "question": "Which 15th-century Northern Renaissance master revolutionized oil painting through intricate translucent layering (glazing) in the 'Arnolfini Portrait'?",
+    "options": [
+      "A. Jan van Eyck",
+      "B. Albrecht Dürer",
+      "C. Rembrandt van Rijn",
+      "D. Michelangelo Buonarroti"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Lesson 4 Slide 47-48 highlights Jan van Eyck's 'Arnolfini Portrait' as the masterwork showing the luminosity and precision achievable through oil glazing."
+  },
+  {
+    "id": 95,
+    "lesson": 4,
+    "lessonTitle": "Lesson 4: Materials and Techniques",
+    "type": "identification",
+    "question": "Which historic painting technique—used in ancient Egypt and the early Renaissance—combines ground pigments with a water-soluble binder traditionally made from egg yolk?",
+    "canonicalAnswer": "Tempera",
+    "acceptedAlternatives": [
+      "Egg Tempera",
+      "Tempera Painting"
+    ],
+    "acceptedVariations": [
+      "tempera"
+    ],
+    "requiredKeywords": [
+      "tempera"
+    ],
+    "nearMisses": [
+      {
+        "term": "Encaustic",
+        "reason": "Encaustic uses melted beeswax, not egg yolk."
+      },
+      {
+        "term": "Gouache",
+        "reason": "Gouache uses gum arabic and chalk, not egg yolk."
+      }
+    ],
+    "distinction": "Tempera is distinctly defined by its traditional egg yolk emulsion binder.",
+    "explanation": "Lesson 4 Slide 49: 'TEMPERA: It is made by mixing pigments with a water-soluble binder, traditionally egg yolk, which gives the paint a smooth, fast-drying quality.'"
+  },
+  {
+    "id": 96,
+    "lesson": 4,
+    "lessonTitle": "Lesson 4: Materials and Techniques",
+    "type": "true_false",
+    "question": "Encaustic painting mixes pigments with heated beeswax, as exemplified by the remarkably preserved Roman Egyptian Fayum mummy portraits.",
+    "correctAnswer": true,
+    "explanation": "True. Lesson 4 Slide 51-53 describes Encaustic as pigments mixed with heated beeswax, citing the Fayum mummy portraits (e.g. 'Portrait of the Boy Eutyches') as prime historical examples."
+  },
+  {
+    "id": 97,
+    "lesson": 4,
+    "lessonTitle": "Lesson 4: Materials and Techniques",
+    "type": "multiple_choice",
+    "question": "Which sculptural method entails carving away stone or material from a larger block to uncover the sculpture within, as seen in Michelangelo's 'David' (1501–1504)?",
+    "options": [
+      "A. Additive Process",
+      "B. Substitution Process",
+      "C. Subtractive Process",
+      "D. Assemblage Process"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Lesson 4 Slide 58-59 defines Subtractive Process: 'Entails removing material from a larger block to reveal the sculpture within... Michelangelo’s David (1501–1504) was carved from a single marble block.'"
+  },
+  {
+    "id": 98,
+    "lesson": 4,
+    "lessonTitle": "Lesson 4: Materials and Techniques",
+    "type": "identification",
+    "question": "What 6,000-year-old substitution/casting technique creates intricate metal sculptures by pouring molten metal into a mold formed around an original wax model?",
+    "canonicalAnswer": "Lost-wax Technique",
+    "acceptedAlternatives": [
+      "Lost-wax Casting",
+      "Lost Wax",
+      "Lost Wax Method",
+      "Cire Perdue",
+      "Lost-wax Process"
+    ],
+    "acceptedVariations": [
+      "lost wax technique",
+      "lost wax casting"
+    ],
+    "requiredKeywords": [
+      "lost",
+      "wax"
+    ],
+    "nearMisses": [
+      {
+        "term": "Additive Sculpting",
+        "reason": "Additive sculpting builds up clay or plaster, whereas lost-wax is a substitution/casting method replacing wax with metal."
+      },
+      {
+        "term": "Relief Carving",
+        "reason": "Relief carving is a subtractive method in stone or wood, not a metal casting process."
+      }
+    ],
+    "distinction": "The Lost-wax technique is specifically a 6,000-year-old casting method using a sacrificial wax model.",
+    "explanation": "Lesson 4 Slide 61: 'Lost-wax Technique - a 6,000 year-old technique for creating detailed metal sculptures and jewelry by pouring molten metal into a mold formed from a wax model.'"
+  },
+  {
+    "id": 99,
+    "lesson": 4,
+    "lessonTitle": "Lesson 4: Materials and Techniques",
+    "type": "true_false",
+    "question": "In intaglio printmaking, ink is applied into carved or etched recessed grooves and transferred under high pressure, while non-image raised surfaces are wiped clean.",
+    "correctAnswer": true,
+    "explanation": "True. Lesson 4 Slide 67: 'INTAGLIO PRINTMAKING: A printmaking technique where images are incised, etched, or engraved into a metal or plastic plate. Ink is applied into these recessed lines, the surface is wiped clean, and dampened paper is pressed into the grooves using a high pressure press.'"
+  },
+  {
+    "id": 100,
+    "lesson": 4,
+    "lessonTitle": "Lesson 4: Materials and Techniques",
+    "type": "multiple_choice",
+    "question": "Which printmaking technique is characterized by having both the image and non-image areas lie completely flat on the exact same surface matrix?",
+    "options": [
+      "A. Relief Printmaking",
+      "B. Intaglio Printmaking",
+      "C. Planar (Planographic) Printmaking",
+      "D. Subtractive Carving"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Lesson 4 Slide 68: 'Planar printing, also known as planographic printing, is a method of printing in which the image area and non-image area lie flat on the same surface, rather than having physically raised or recessed features.'"
+  }
+];
